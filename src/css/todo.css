@@ -1,0 +1,19 @@
+.Todo {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.TodoHeader form {
+    display: flex;
+}
+
+.TodoHeader input {
+    width: 80%;
+}
+.TodoHeader button {
+    width: 10%;
+}
+
+.todoItems {
+    margin-bottom: 10px;
+}
