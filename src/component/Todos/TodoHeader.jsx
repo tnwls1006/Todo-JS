@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import useTodo from '../hooks/useTodo';
+import useTodo from '../../hooks/useTodo';
 
-import '../css/todo.css';
+import '../../css/todo.css';
 
 export default function TodoHeader() {
     const [inTodo, setInTodo] = useState('');

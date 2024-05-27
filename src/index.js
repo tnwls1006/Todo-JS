@@ -1,11 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Todo from './component/todo';
+import App from './App';
 
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import TodoView from './component/TodoView';
 
 // const router = createBrowserRouter(
 //     createRoutesFromElements(
@@ -15,20 +13,9 @@ import TodoView from './component/TodoView';
 //     )
 // );
 
-const Router = () => {
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Todo />} />
-                <Route path="/todos/:id" element={<TodoView />} />
-            </Routes>
-        </BrowserRouter>
-    );
-};
-
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <Router />
+        <App />
     </React.StrictMode>
 );
 

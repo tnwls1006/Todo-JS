@@ -1,7 +1,7 @@
 import React from 'react';
 
-import TodoHeader from './TodoHeader';
-import TodoList from './TodoList';
+import TodoHeader from './Todos/TodoHeader';
+import TodoList from './Todos/TodoList';
 
 import '../css/todo.css';
 

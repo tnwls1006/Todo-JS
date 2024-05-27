@@ -1,16 +1,16 @@
 import React from 'react';
-import useTodo from '../hooks/useTodo';
+import useTodo from '../../hooks/useTodo';
 import { Link } from 'react-router-dom';
 
 export default function TodoList() {
     const todos = useTodo((state) => state.todos);
     const deleteTodo = useTodo((state) => state.deleteTodo);
     const toggleTodo = useTodo((state) => state.toggleTodo);
-
+    console.log(todos);
     return (
         <div className="TodoList">
             <p> TodoList</p>
-            {todos.map((todo) => (
+            {todos.map((todo, idx) => (
                 <div
                     className="todoItems"
                     key={todo.id}
@@ -21,10 +21,10 @@ export default function TodoList() {
                         cursor: 'pointer',
                     }}
                 >
-                    <span>{todo.id} </span>
+                    <span>{idx + 1} </span>
 
                     <Link key={todo.id} to={`/todos/${todo.id}`} style={{ textDecoration: 'none', color: 'black' }}>
-                        <span>{todo.value} </span>
+                        <span style={{ color: todo.isChecked ? 'gray' : 'black' }}>{todo.value} </span>
                     </Link>
 
                     <button onClick={() => toggleTodo(todo.id)}>완료</button>

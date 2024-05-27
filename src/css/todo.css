@@ -1,3 +1,8 @@
+.App {
+    display: flex;
+    text-align: center;
+}
+
 .Todo {
     font-weight: bold;
     font-size: 2rem;

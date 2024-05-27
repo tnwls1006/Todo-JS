@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import useTodo from '../hooks/useTodo';
+import useTodo from '../../hooks/useTodo';
 
 export default function TodoView(state) {
     const { id } = useParams();
@@ -10,10 +10,8 @@ export default function TodoView(state) {
 
     return (
         <div className="TodoView">
-            <p>
-                {currentTodo.id} / {currentTodo.value}
-            </p>
-            <Link to={`/`}>
+            <p>{currentTodo.value}</p>
+            <Link to={`/todo`}>
                 <button>이전</button>
             </Link>
         </div>

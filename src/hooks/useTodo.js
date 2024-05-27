@@ -1,12 +1,11 @@
 import { create } from 'zustand';
-import todo from '../component/todo';
 
 const useTodo = create((set) => ({
     todos: [],
     id: 1,
     addTodo: (todo) =>
         set((state) => ({
-            todos: [{ id: state.id, value: todo, isChecked: false }, ...state.todos],
+            todos: [...state.todos, { id: state.id, value: todo, isChecked: false }],
             id: state.id + 1,
         })),
     deleteTodo: (id) =>
@@ -15,7 +14,7 @@ const useTodo = create((set) => ({
         })),
     toggleTodo: (id) =>
         set((state) => ({
-            todos: state.todos.map((todo) => (todo.id === id ? { ...todo, isChecked: !todo.isChecked } : todo)),
+            todos: state.todos.map((todo) => (todo.id === id ? { isChecked: !todo.isChecked, ...todo } : todo)),
         })),
 }));
 
