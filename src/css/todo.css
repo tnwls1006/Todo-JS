@@ -1,7 +1,55 @@
+
 .App {
     display: flex;
     text-align: center;
+    width: 100%;
+    min-height: 100%;
+
 }
+
+.MainHeader {
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.MainHeader h1{
+    cursor: pointer;
+}
+
+.MainHeader button{
+    width: 5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.UserState {
+    display: flex;
+    align-items: center;
+}
+
+.UserState span {
+    display: flex;
+    align-items: center;
+}
+
+.UserState button {
+    margin-left: 0.5rem;
+    width: auto; 
+    padding: 0.5rem 1rem;
+    height: auto; 
+    font-size: 1rem;
+    border-radius: 15px;
+}
+
 
 .Todo {
     font-weight: bold;

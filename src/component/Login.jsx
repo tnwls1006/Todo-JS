@@ -9,29 +9,32 @@ export default function Login() {
     const [userPW, setUserPW] = useState('');
 
     const navigate = useNavigate();
-
-    const { login } = useAuth;
+    const { login } = useAuth();
 
     const onLogin = (e) => {
         e.preventDefault();
-        if (userID.trim() !== '' && userPW.trim() !== '') {
-            login();
+        if (userID.trim().length >= 3 && userID.trim().length <=10 && userPW.trim() !== '') {
+            login(userID);
             navigate('/todo');
         } else {
-            alert('아이디와 비밀번호를 입력하세요');
+            alert('아이디는 3글자 이상 10글자 이하, 비밀번호를 입력하세요');
         }
     };
 
     return (
-        <div className="Login-container">
-            <h1>Todo</h1>
+        <div className='Login'>
+            <div className="Login-container">
             <form className="Login-Form" onSubmit={onLogin}>
                 <label htmlFor="userID">아이디</label>
                 <input type="text" id="userID" value={userID} onChange={(e) => setUserID(e.target.value)} />
+                
                 <label htmlFor="userPW">비밀번호</label>
                 <input type="password" id="userPW" value={userPW} onChange={(e) => setUserPW(e.target.value)} />
+               
                 <button type="submit">로그인</button>
             </form>
         </div>
+        </div>
+        
     );
 }

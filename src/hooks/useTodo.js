@@ -14,7 +14,7 @@ const useTodo = create((set) => ({
         })),
     toggleTodo: (id) =>
         set((state) => ({
-            todos: state.todos.map((todo) => (todo.id === id ? { isChecked: !todo.isChecked, ...todo } : todo)),
+            todos: state.todos.map((todo) => (todo.id === id ? { ...todo,isChecked: !todo.isChecked } : todo)),
         })),
 }));
 

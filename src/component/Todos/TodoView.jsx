@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import useTodo from '../../hooks/useTodo';
 
+import '../../css/todo.css'
+
 export default function TodoView(state) {
     const { id } = useParams();
 

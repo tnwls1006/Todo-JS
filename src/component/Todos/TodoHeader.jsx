@@ -17,7 +17,6 @@ export default function TodoHeader() {
 
     return (
         <div className="TodoHeader">
-            <p>Todo</p>
             <form onSubmit={onSubmit}>
                 <input
                     type="text"

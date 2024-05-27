@@ -6,7 +6,6 @@ export default function TodoList() {
     const todos = useTodo((state) => state.todos);
     const deleteTodo = useTodo((state) => state.deleteTodo);
     const toggleTodo = useTodo((state) => state.toggleTodo);
-    console.log(todos);
     return (
         <div className="TodoList">
             <p> TodoList</p>

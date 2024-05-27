@@ -5,14 +5,6 @@ import App from './App';
 
 import reportWebVitals from './reportWebVitals';
 
-// const router = createBrowserRouter(
-//     createRoutesFromElements(
-//         <Route path="/" element={<Todo />}>
-//             <Route path="/views" element={<TodoView />} />
-//         </Route>
-//     )
-// );
-
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <App />
