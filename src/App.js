@@ -1,19 +1,20 @@
 import React from 'react';
 import Todo from './component/Todo';
 import Login from './component/Login';
-import TodoView from './component/Todos/TodoView';
-import AutoProvider from './Auto/AutoProvider';
-import PrivateRoute from './Auto/PrivateRoute';
+import TodoView from './component/todos/TodoView';
+import AutoProvider from './component/provider/AuthProvider';
+import PrivateRoute from './component/provider/PrivateRoute';
 import MainHeader from './component/MainHeader';
 
 import './App.css';
+import styled from 'styled-components';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const Router = () => {
     return (
         <BrowserRouter>
-        <MainHeader />
+            <MainHeader />
             <Routes>
                 <Route path="/login" element={<Login />} />
                 <Route path="/todo" element={<PrivateRoute element={<Todo />} />} />

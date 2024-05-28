@@ -1,25 +1,16 @@
-
-.App {
-    display: flex;
-    text-align: center;
-    width: 100%;
-    min-height: 100%;
-
-}
-
-.MainHeader {
+/* .MainHeader {
     height: 20%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
-}
+} */
 
-.MainHeader h1{
+/* .MainHeader h1 {
     cursor: pointer;
-}
+} */
 
-.MainHeader button{
+/* .MainHeader button {
     width: 5rem;
     height: 2.5rem;
     display: flex;
@@ -29,44 +20,43 @@
     border-radius: 25px;
     font-weight: bold;
     font-size: 1.2rem;
-}
+} */
 
-.UserState {
+/* .UserState {
     display: flex;
     align-items: center;
-}
+} */
 
-.UserState span {
+/* .UserState span {
     display: flex;
     align-items: center;
-}
+} */
 
-.UserState button {
+/* .UserState button {
     margin-left: 0.5rem;
-    width: auto; 
+    width: auto;
     padding: 0.5rem 1rem;
-    height: auto; 
+    height: auto;
     font-size: 1rem;
     border-radius: 15px;
-}
+} */
 
-
-.Todo {
+/* .Todo {
     font-weight: bold;
     font-size: 2rem;
-}
+} */
 
-.TodoHeader form {
+/* .TodoHeader form {
     display: flex;
-}
+} */
 
-.TodoHeader input {
+/* .TodoHeader input {
     width: 80%;
-}
-.TodoHeader button {
+} */
+/* .TodoHeader button {
     width: 10%;
-}
+} */
 
-.todoItems {
+/* .todoItems {
     margin-bottom: 10px;
-}
+} */

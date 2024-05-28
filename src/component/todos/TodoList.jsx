@@ -1,6 +1,7 @@
 import React from 'react';
 import useTodo from '../../hooks/useTodo';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 export default function TodoList() {
     const todos = useTodo((state) => state.todos);
@@ -10,8 +11,8 @@ export default function TodoList() {
         <div className="TodoList">
             <p> TodoList</p>
             {todos.map((todo, idx) => (
-                <div
-                    className="todoItems"
+                <TodoItems
+                    className="TodoItems"
                     key={todo.id}
                     to={`/todos/${todo.id}`}
                     style={{
@@ -28,8 +29,12 @@ export default function TodoList() {
 
                     <button onClick={() => toggleTodo(todo.id)}>완료</button>
                     <button onClick={() => deleteTodo(todo.id)}>삭제</button>
-                </div>
+                </TodoItems>
             ))}
         </div>
     );
 }
+
+const TodoItems = styled.div`
+    margin-bottom: 10px;
+`;
