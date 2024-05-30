@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Todo from './component/Todo';
 import Login from './component/Login';
 import TodoView from './component/todos/TodoView';
@@ -7,9 +7,10 @@ import PrivateRoute from './component/provider/PrivateRoute';
 import MainHeader from './component/MainHeader';
 
 import './App.css';
-import styled from 'styled-components';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ThemeContext, ThemeProvider } from 'styled-components';
+import { darkTheme, lightTheme } from './component/style/Theme';
 
 const Router = () => {
     return (
@@ -25,11 +26,22 @@ const Router = () => {
 };
 
 export default function App() {
+    const [isDark, setIsDark] = useState(false);
+
+    const themeContextValue = { isDark, setIsDark };
+
     return (
-        <div className="App">
-            <AutoProvider>
-                <Router />
-            </AutoProvider>
-        </div>
+        <ThemeContext.Provider value={themeContextValue}>
+            <div
+                className="App"
+                style={{
+                    backgroundColor: isDark ? darkTheme.background : lightTheme.background,
+                }}
+            >
+                <AutoProvider>
+                    <Router />
+                </AutoProvider>
+            </div>
+        </ThemeContext.Provider>
     );
 }

@@ -1,3 +1,5 @@
+import { type } from '@testing-library/user-event/dist/type';
+
 export const lightTheme = {
     background: '#fefefe',
     text: '#202124',

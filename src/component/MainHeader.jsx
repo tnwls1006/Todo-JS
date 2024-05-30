@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from './provider/AuthProvider';
 
 import styled from 'styled-components';
+import { useTheme } from './style/ThemeProvider';
 
 export default function MainHeader() {
+    const { isDark, setIsDark } = useContext(useTheme);
+
     const navigate = useNavigate();
     const location = useLocation();
     const { isAuth, userID, logout } = useAuth();
@@ -34,7 +37,7 @@ export default function MainHeader() {
                         {userID} <LogoutBtn onClick={onLogout}>Logout</LogoutBtn>{' '}
                     </UserSpan>
                 )}
-                {/* <DarkBtn onClick={ontheme}>다크 모드</DarkBtn> */}
+                {/* <Button onClick={ontheme}>다크 모드</Button> */}
             </UserState>
         </Header>
     );
