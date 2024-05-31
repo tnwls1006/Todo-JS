@@ -9,8 +9,9 @@ import MainHeader from './component/MainHeader';
 import './App.css';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { ThemeContext, ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from './component/style/Theme';
+import { GlobalStyle } from './component/style/GlobalStyle';
 
 const Router = () => {
     return (
@@ -26,22 +27,24 @@ const Router = () => {
 };
 
 export default function App() {
-    const [isDark, setIsDark] = useState(false);
+    // const [theme, setTheme] = useState('dark');
 
-    const themeContextValue = { isDark, setIsDark };
-
+    // const toggleTheme = () => {
+    //     setTheme(() => {
+    //         return theme === 'dark' ? 'light' : 'dark';
+    //     });
+    // };
     return (
-        <ThemeContext.Provider value={themeContextValue}>
-            <div
-                className="App"
-                style={{
-                    backgroundColor: isDark ? darkTheme.background : lightTheme.background,
-                }}
-            >
+        // <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
+        <ThemeProvider>
+            <GlobalStyle />
+            <div className="App">
+                {/* style={{ backgroundColor: isDark ? darkTheme.background : lightTheme.background, }} */}
                 <AutoProvider>
                     <Router />
                 </AutoProvider>
             </div>
-        </ThemeContext.Provider>
+            //{' '}
+        </ThemeProvider>
     );
 }

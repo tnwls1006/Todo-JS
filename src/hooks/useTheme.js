@@ -1,13 +1,16 @@
-import { useCallback } from 'react';
+import { useContext } from 'react';
+import { ThemeProvider } from '../component/style/ThemeProvider';
 
-function useTheme() {
-    const [theme, setTheme] = useState('light');
+export function useTheme() {
+    const [theme, setTheme] = useContext(ThemeProvider);
 
-    const onChangeTheme = useCallback(() => {
-        setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
-    }, []);
+    const toggleTheme = () => {
+        setTheme((t) => (t === 'light' ? 'dark' : 'light'));
+    };
 
-    return { theme, onChangeTheme };
+    // const onChangeTheme = useCallback(() => {
+    //     setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+    // }, []);
+
+    return { theme, toggleTheme };
 }
-
-export default useTheme;

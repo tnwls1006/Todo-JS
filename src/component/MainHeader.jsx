@@ -4,6 +4,7 @@ import { useAuth } from './provider/AuthProvider';
 
 import styled from 'styled-components';
 import { useTheme } from './style/ThemeProvider';
+import ThemeButton from './ThemeButton';
 
 export default function MainHeader() {
     const { isDark, setIsDark } = useContext(useTheme);
@@ -25,7 +26,7 @@ export default function MainHeader() {
         navigate('/login');
     };
 
-    // const ontheme = () => {};
+    const ontheme = () => {};
 
     return (
         <Header>
@@ -37,7 +38,8 @@ export default function MainHeader() {
                         {userID} <LogoutBtn onClick={onLogout}>Logout</LogoutBtn>{' '}
                     </UserSpan>
                 )}
-                {/* <Button onClick={ontheme}>다크 모드</Button> */}
+                {/* <button onClick={ontheme}>다크 모드</button> */}
+                <ThemeButton />
             </UserState>
         </Header>
     );
