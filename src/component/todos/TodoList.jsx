@@ -9,7 +9,7 @@ export default function TodoList() {
     const toggleTodo = useTodo((state) => state.toggleTodo);
     return (
         <div className="TodoList">
-            {/* <p> TodoList</p> */}
+            <p> TodoList</p>
             {todos.map((todo, idx) => (
                 <TodoItems
                     className="TodoItems"
