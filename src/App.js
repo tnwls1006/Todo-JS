@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Todo from './component/Todo';
 import Login from './component/Login';
-import TodoView from './component/Todos/TodoView';
-import AutoProvider from './Auto/AutoProvider';
-import PrivateRoute from './Auto/PrivateRoute';
+import TodoView from './component/todos/TodoView';
+import AutoProvider from './component/provider/AuthProvider';
+import PrivateRoute from './component/provider/PrivateRoute';
 import MainHeader from './component/MainHeader';
 
 import './App.css';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import { darkTheme, lightTheme } from './component/style/Theme';
+import { GlobalStyle } from './component/style/GlobalStyle';
 
 const Router = () => {
     return (
         <BrowserRouter>
-        <MainHeader />
+            <MainHeader />
             <Routes>
                 <Route path="/login" element={<Login />} />
                 <Route path="/todo" element={<PrivateRoute element={<Todo />} />} />
@@ -24,11 +27,24 @@ const Router = () => {
 };
 
 export default function App() {
+    // const [theme, setTheme] = useState('dark');
+
+    // const toggleTheme = () => {
+    //     setTheme(() => {
+    //         return theme === 'dark' ? 'light' : 'dark';
+    //     });
+    // };
     return (
-        <div className="App">
-            <AutoProvider>
-                <Router />
-            </AutoProvider>
-        </div>
+        // <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
+        <ThemeProvider>
+            <GlobalStyle />
+            <div className="App">
+                {/* style={{ backgroundColor: isDark ? darkTheme.background : lightTheme.background, }} */}
+                <AutoProvider>
+                    <Router />
+                </AutoProvider>
+            </div>
+            //{' '}
+        </ThemeProvider>
     );
 }
