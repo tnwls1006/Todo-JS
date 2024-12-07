@@ -10,7 +10,7 @@ import './App.css';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import { darkTheme, lightTheme } from './component/style/Theme';
+// import { darkTheme, lightTheme } from './component/style/Theme';
 import { GlobalStyle } from './component/style/GlobalStyle';
 
 const Router = () => {
